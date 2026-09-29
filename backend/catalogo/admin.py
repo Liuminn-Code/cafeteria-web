@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Cafe
 
-# Register your models here.
+@admin.register(Cafe)
+class CafeAdmin(admin.ModelAdmin):
+    list_display = ("nombre", "origen", "precio", "stock", "altura", "variedad", "peso")
+    list_filter = ("origen", "variedad")
+    search_fields = ("nombre", "origen", "variedad")
