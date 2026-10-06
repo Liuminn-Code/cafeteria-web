@@ -1,25 +1,7 @@
-from django.shortcuts import render
-
-# Create your views here.
-from django.http import JsonResponse
+from rest_framework import viewsets
 from .models import Cafe
+from .serializers import CafeSerializer
 
-
-def cafe_list(request):
-    cafes = list(
-        Cafe.objects.all().values(
-            "id",
-            "nombre",
-            "origen",
-            "precio",
-            "stock",
-            "altura",
-            "variedad",
-            "peso",
-        )
-    )
-
-    return JsonResponse({
-        "count": len(cafes),
-        "results": cafes
-    })
+class CafeViewSet(viewsets.ModelViewSet):
+    queryset = Cafe.objects.all()
+    serializer_class = CafeSerializer
