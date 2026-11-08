@@ -5,7 +5,8 @@ const formatoCLP = (valor) =>
     currency: "CLP",
   });
 
-export default function CafeList({ cafes }) {
+
+export default function CafeList({ cafes, onEditar, onEliminar }) {
   if (cafes.length === 0) {
     return <p className="aviso">Aún no hay cafés registrados.</p>;
   }
@@ -21,6 +22,7 @@ export default function CafeList({ cafes }) {
           <th>Altura</th>
           <th>Variedad</th>
           <th>Peso (g)</th>
+          <th>Acciones</th>
         </tr>
       </thead>
 
@@ -34,6 +36,10 @@ export default function CafeList({ cafes }) {
             <td>{c.altura}</td>
             <td>{c.variedad}</td>
             <td>{c.peso}</td>
+            <td>
+<button onClick={() => onEditar(c)}>Editar</button>
+<button onClick={() => onEliminar(c)}>Eliminar</button>
+</td> 
           </tr>
         ))}
       </tbody>
