@@ -10,7 +10,7 @@ El proyecto utiliza Django REST Framework para el desarrollo del backend y React
 
 - **Inicio de sesión:** autenticación de usuarios mediante JWT.
 - **Gestión de cafés:** creación, consulta, edición y eliminación de productos.
-- **Dashboard de inventario:** visualización de estadísticas y datos relevantes del inventario.
+- **Dashboard de inventario:** visualización de datos relevantes del inventario.
 - **Control de stock:** consulta de las unidades disponibles de cada producto.
 - **Información de productos:** registro de nombre, origen, precio, stock, altura, variedad y peso.
 
@@ -28,8 +28,7 @@ El proyecto utiliza Django REST Framework para el desarrollo del backend y React
 - JavaScript
 - Vite
 - CSS
-- Recharts (visualización de gráficos)
-- Lucide React (iconografía)
+
 
 ## Requisitos previos
 
@@ -86,9 +85,6 @@ Iniciar el servidor:
 python manage.py runserver
 ```
 
-El backend estará disponible en:
-
-`http://127.0.0.1:8000/`
 
 ### 3. Configurar el frontend
 
