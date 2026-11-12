@@ -41,3 +41,24 @@ class CafeSerializer(serializers.ModelSerializer):
                 "El precio debe ser mayor que 0."
             )
         return value
+    
+    def validate_stock(self, value):
+        if value < 0:
+            raise serializers.ValidationError(
+                "El stock debe ser mayor o igual a 0."
+            )
+            
+        return value
+    def validate_altura(self, value):
+        if value <= 0:
+            raise serializers.ValidationError(
+                "La altura debe ser mayor que 0."
+            )
+        return value
+    
+    def validate_peso(self, value):
+        if value <= 0:
+            raise serializers.ValidationError(
+                "El peso debe ser mayor que 0."
+            )
+        return value

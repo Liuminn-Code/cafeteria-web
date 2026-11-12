@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import "./Login.css";
 
 export default function Login({ onLogin }) {
     const [username, setUsername] = useState("");
@@ -42,11 +42,11 @@ export default function Login({ onLogin }) {
     };
 
     return (
-        <div>
+        <div className="login-container">
             <h1>Iniciar sesión</h1>
 
-            <form onSubmit={iniciarSesion}>
-                <div>
+            <form className="login-form" onSubmit={iniciarSesion}>
+                <div className="login-campo">
                     <label>Usuario</label>
                     <input
                         type="text"
@@ -56,7 +56,7 @@ export default function Login({ onLogin }) {
                     />
                 </div>
 
-                <div>
+                <div className="login-campo">
                     <label>Contraseña</label>
                     <input
                         type="password"
@@ -66,7 +66,7 @@ export default function Login({ onLogin }) {
                     />
                 </div>
 
-                {error && <p>{error}</p>}
+                {error && <p className="login-error">{error}</p>}
 
                 <button type="submit">
                     Iniciar sesión
